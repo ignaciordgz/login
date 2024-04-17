@@ -1,4 +1,5 @@
 import { Button, Typography } from "@mui/material"
+import "./registerButton.css"
 
 
 export default function RegisterButton()
