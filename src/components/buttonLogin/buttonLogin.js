@@ -8,8 +8,8 @@ export default function ButtonLogin()
 {
     return (
         <div>
-            <Button variant = "outlined" id="login" href="loginSucceeded" size="medium">
-                    <Typography id="textLogin" variant="h6" sx={{fontFamily: "Poppins" }}>Login</Typography>
+            <Button variant = "outlined" id="login" href="login" size="medium">
+                    <Typography id="textLogin" variant="h6" sx={{fontFamily: "Poppins" }}>Log in</Typography>
             </Button>
         </div>
     )
