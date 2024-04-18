@@ -1,13 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
-import RegisterButton from './components/registerButton/registerButton';
-import ButtonLogin from './components/buttonLogin/buttonLogin';
+import MainScreen from './pages/mainScreen/mainScreen'
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <ButtonLogin></ButtonLogin>
+        <MainScreen/>
       </header>
     </div>
   );
