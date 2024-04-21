@@ -8,7 +8,7 @@ export default function InputUser()
     return (
         <div>
         <Box>
-        <AccountCircle sx={{color:"grey", position:"absolute", left:"588px", margin:"14px"}}/>
+        <AccountCircle sx={{color:"grey", position:"absolute", left:"80.5vh", margin:"14px"}}/>
         <TextField 
             id="User"
             variant="outlined" 
