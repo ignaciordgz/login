@@ -6,11 +6,17 @@ import IconButton from '@mui/material/IconButton';
 import "./inputPassword.css"
 import { useState } from 'react';
 
-export default function InputPassword()
+export default function InputPassword({onChange})
 {
     var [password, setPassword] = useState("text");
 
     var visibility = <Visibility/>
+
+    const handleChange = (e) => 
+    {
+        const value = e.target.value
+        onChange(value)
+    }
 
     return (
         <div>
@@ -19,6 +25,7 @@ export default function InputPassword()
             id="password"
             label="Password"
             required
+            onChange={handleChange}
             type={password}
             InputProps=
             {{
