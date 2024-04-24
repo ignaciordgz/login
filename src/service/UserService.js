@@ -7,7 +7,7 @@ const axiosGetUsers = () =>
    return axios.get(BASE_URL + "/users")
 }
 
-const axiosPostUser = (body) => 
+export const axiosPostUser = (body) => 
 {
     return axios.post(BASE_URL + "/user", body)
 }
