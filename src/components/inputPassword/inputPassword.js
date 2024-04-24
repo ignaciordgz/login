@@ -16,6 +16,7 @@ export default function InputPassword()
         <div>
         <Box>
         <TextField
+            id="password"
             label="Password"
             required
             type={password}
