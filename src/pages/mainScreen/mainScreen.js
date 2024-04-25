@@ -5,13 +5,14 @@ import InputPassword from '../../components/inputPassword/inputPassword'
 import "./mainScreen.css"
 import ButtonLogin from '../../components/buttonLogin/buttonLogin'
 import RegisterButton from '../../components/registerButton/registerButton'
-import { axiosPostUser } from "../../service/UserService"
+import { axiosPostUser, axiosGetUsers } from "../../service/UserService"
 
 
 export default function MainScreen()
 {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
+    const [error, setError] = useState(false)
 
     const handleUsernameChange = (value) => 
     {
@@ -33,15 +34,35 @@ export default function MainScreen()
         )
     }
 
+    const handleSubmitLogin = async () =>
+    {
+        const users = (await axiosGetUsers()).data
+        
+        for (var user of users)
+        {
+            if (user.username === username && user.password === password)
+            {
+                console.log("Login Succeeded")
+                setError(false)
+            }
+            else
+            {
+                console.error("Las credenciales no coinciden con ningun usuario registrado")
+                setError(true)
+                alert("Invalid credentials")
+            }
+        }
+    }
+
     return (
         <Container id="container">
             <Grid container spacing={2}>
             <Grid item xs={12}>
-                <InputUser onChange={handleUsernameChange}/>
+                <InputUser onChange={handleUsernameChange} error={error}/>
             </Grid>
 
             <Grid item xs={12}>
-                <InputPassword onChange={handlePasswordChange}/>
+                <InputPassword onChange={handlePasswordChange} error={error}/>
             </Grid>
 
             <Grid item xs={12}>
@@ -49,7 +70,7 @@ export default function MainScreen()
             </Grid>
 
             <Grid item xs={12}>
-                <ButtonLogin/>
+                <ButtonLogin onClick={handleSubmitLogin}/>
             </Grid>
             </Grid>
 
