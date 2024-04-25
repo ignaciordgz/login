@@ -10,8 +10,6 @@ function App() {
       <BrowserRouter>
           <Routes>
             <Route path="/" element={<MainScreen/>}/>
-            <Route path="registration"/>
-            <Route path="login"/>
           </Routes>
         </BrowserRouter>
       </header>
