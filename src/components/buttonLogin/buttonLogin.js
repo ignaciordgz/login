@@ -4,11 +4,11 @@ import { createTheme } from '@mui/material';
 import "./buttonLogin.css";
 
 
-export default function ButtonLogin()
+export default function ButtonLogin({onClick})
 {
     return (
         <div>
-            <Button variant = "outlined" id="login" href="login" size="medium">
+            <Button variant = "outlined" id="login" size="medium" onClick={onClick}>
                     <Typography id="textLogin" variant="h6" sx={{fontFamily: "Poppins" }}>Log in</Typography>
             </Button>
         </div>

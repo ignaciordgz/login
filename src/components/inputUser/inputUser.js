@@ -2,20 +2,20 @@ import { AccountCircle } from "@mui/icons-material";
 import { Input, InputAdornment, InputLabel, OutlinedInput, TextField } from "@mui/material";
 import Box from '@mui/material/Box';
 
-
-export default function InputUser({onChange})
+export default function InputUser({onChange, error})
 {
     const handleChange = (e) => 
     {
         const value = e.target.value
         onChange(value)
     }
-
+    
     return (
         <div>
         <Box>
         <AccountCircle sx={{color:"grey", position:"absolute", left:"80.5vh", margin:"14px"}}/>
         <TextField 
+            error={error}
             id="User"
             onChange={handleChange}
             variant="outlined" 
