@@ -1,5 +1,5 @@
 import { AccountCircle } from "@mui/icons-material";
-import { Input, InputAdornment, InputLabel, OutlinedInput, TextField } from "@mui/material";
+import { TextField } from "@mui/material";
 import Box from '@mui/material/Box';
 
 export default function InputUser({onChange, error})
@@ -13,7 +13,7 @@ export default function InputUser({onChange, error})
     return (
         <div>
         <Box>
-        <AccountCircle sx={{color:"grey", position:"absolute", left:"80.5vh", margin:"14px"}}/>
+        <AccountCircle sx={{color:"grey", position:"relative", margin:"auto", right:"27px", top:"4px"}}/>
         <TextField 
             error={error}
             id="User"
@@ -21,8 +21,9 @@ export default function InputUser({onChange, error})
             variant="outlined" 
             label="Username" 
             required
-            sx={{width:"270.4px", right:"0.2px"}}
+            sx={{width:"271px"}}
             inputProps={{maxLength:16}}
+            style={{position:"relative", right:"12px"}}
         >
         </TextField>
         </Box>
