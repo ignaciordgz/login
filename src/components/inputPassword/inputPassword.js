@@ -35,7 +35,9 @@ export default function InputPassword({onChange})
                 </IconButton>
                 )
             }}
-            inputProps={{maxLength:16, }}
+            inputProps={{maxLength:16}}
+            sx={{width:"271px"}}
+            style={{position:"relative"}}
         >
         </TextField>
         </Box>
