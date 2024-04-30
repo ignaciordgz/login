@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import MainScreen from './pages/mainScreen/mainScreen'
+import MainScreen from './pages/mainScreen'
 
 
 function App() {

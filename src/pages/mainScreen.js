@@ -1,11 +1,10 @@
 import { Container, Grid } from '@mui/material'
 import React, { useState } from 'react'
-import InputUser from '../../components/inputUser/inputUser'
-import InputPassword from '../../components/inputPassword/inputPassword'
-import "./mainScreen.css"
-import ButtonLogin from '../../components/buttonLogin/buttonLogin'
-import RegisterButton from '../../components/registerButton/registerButton'
-import { axiosPostUser, axiosGetUsers } from "../../service/UserService"
+import InputUser from '../components/inputUser/inputUser'
+import InputPassword from '../components/inputPassword/inputPassword'
+import ButtonLogin from '../components/buttonLogin/buttonLogin'
+import RegisterButton from '../components/registerButton/registerButton'
+import { axiosPostUser, axiosGetUsers } from "../service/UserService"
 
 
 export default function MainScreen()
