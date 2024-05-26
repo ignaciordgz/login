@@ -25,31 +25,45 @@ export default function MainScreen()
 
     const handleSubmit = async() => 
     {
-        await axiosPostUser(
-            {
-                username : username,
-                password : password
-            }
-        )
+        try
+        {
+            await axiosPostUser(
+                {
+                    username : username,
+                    password : password
+                }
+            )
+        }
+        catch(e)
+        {
+            console.error(e)
+        }
     }
 
     const handleSubmitLogin = async () =>
-    {
-        const users = (await axiosGetUsers()).data
-        
-        for (var user of users)
+    {   
+        try
         {
-            if (user.username === username && user.password === password)
+            const users = (await axiosGetUsers()).data
+
+            for (var user of users)
             {
-                console.log("Login Succeeded")
-                setError(false)
+                if (user.username === username && user.password === password)
+                {
+                    console.log("Login Succeeded")
+                    setError(false)
+                }
+                else
+                {
+                    console.error("Las credenciales no coinciden con ningun usuario registrado")
+                    setError(true)
+                    alert("Invalid credentials")
+                }
             }
-            else
-            {
-                console.error("Las credenciales no coinciden con ningun usuario registrado")
-                setError(true)
-                alert("Invalid credentials")
-            }
+        }
+        catch (e)
+        {
+            console.error(e)
         }
     }
 
